@@ -1,8 +1,13 @@
 #include "lists.h"
-
+/**
+ * check_cycle - checks if list loops (has cycle)
+ * @list: list to check
+ *
+ * ndege goes faster, will overlap if loops
+ * Return: 1 if it loops, else nun
+ */
 int check_cycle(listint_t *list)
 {
-	int noPsycho = 0;
 	listint_t *ndege, *kalessa;
 
 	ndege = list;
@@ -11,13 +16,12 @@ int check_cycle(listint_t *list)
 	while (ndege && kalessa)
 	{
 		ndege = ndege->next->next;
+		if (ndege == NULL)
+			return (0);
 		kalessa = kalessa->next;
+
 		if (ndege == kalessa)
-		{	noPsycho = 1;
-			break;
-		}
+			return (1);
 	}
-	if(!noPsycho)
-		return (0);
-	return (1);
+	return (0);
 }
