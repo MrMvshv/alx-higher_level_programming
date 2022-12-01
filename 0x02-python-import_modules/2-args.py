@@ -14,6 +14,5 @@ def magombano():
             print("{}: {}".format(x, sys.argv[x]))
 
 
-
 if __name__ == '__main__':
     magombano()
