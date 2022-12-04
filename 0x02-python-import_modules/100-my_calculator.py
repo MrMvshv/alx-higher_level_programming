@@ -7,7 +7,7 @@ def calC():
     argv = sys.argv
     le = len(sys.argv)
     if le != 4:
-        print(f"{le}Usage: ./100-my_calculator.py <a> <operator> <b>")
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     else:
         a = int(argv[1])
