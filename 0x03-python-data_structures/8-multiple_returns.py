@@ -10,7 +10,3 @@ def multiple_returns(sentence):
         c = sentence[0]
     tup_s = (d, c)
     return tup_s
-
-
-if __name__ == '__main__':
-    multiple_returns()

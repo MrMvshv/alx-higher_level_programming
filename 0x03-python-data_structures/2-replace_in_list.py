@@ -6,7 +6,3 @@ def replace_in_list(my_list, idx, element):
         return my_list
     my_list[idx] = element
     return my_list
-
-
-if __name__ == '__main__':
-    print_list_integer([])

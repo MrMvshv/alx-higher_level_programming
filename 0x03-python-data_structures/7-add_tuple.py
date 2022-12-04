@@ -17,7 +17,3 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
     tuple_c = (a + c, b + d)
     return tuple_c
-
-
-if __name__ == '__main__':
-    add_tuple(tuple_a=(), tuple_b=())

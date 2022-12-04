@@ -9,7 +9,3 @@ def new_in_list(my_list, idx, element):
         b.append(x)
     b[idx] = element
     return b
-
-
-if __name__ == '__main__':
-    print_list_integer([])
