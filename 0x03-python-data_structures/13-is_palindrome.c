@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stddef.h>
-#include <stdio.h>
 /**
  * is_palindrome - checks if sllist is a palindrome
  * @head: adress of first node
@@ -44,7 +43,6 @@ int is_palindrome(listint_t **head)
 		{	z = z->next;
 			m--;
 		}
-		printf("comparin: %d, %d\n", z->n, a->n);
 		if (z->n != a->n)
 			return (0);
 		a = a->next;
