@@ -11,7 +11,3 @@ def divisible_by_2(my_list=[]):
             else:
                 new_list.append(False)
     return new_list
-
-
-if __name__ == '__main__':
-    print_list_integer([])
