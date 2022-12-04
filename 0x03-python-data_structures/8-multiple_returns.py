@@ -11,5 +11,6 @@ def multiple_returns(sentence):
     tup_s = (d, c)
     return tup_s
 
+
 if __name__ == '__main__':
     multiple_returns()
