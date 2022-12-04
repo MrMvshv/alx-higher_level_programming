@@ -12,4 +12,5 @@ def print_matrix_integer(matrix=[[]]):
                     print("", end='\n')
                 else:
                     print("", end=' ')
-    else: print()
+    else:
+        print()
