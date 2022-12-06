@@ -2,6 +2,9 @@
 
 
 def print_matrix_integer(matrix=[[]]):
+    if matrix == [[]]:
+        print()
+        return
     if len(matrix) != 0:
         j = len(matrix)
         k = len(matrix[0])
@@ -14,7 +17,3 @@ def print_matrix_integer(matrix=[[]]):
                     print("", end=' ')
     else:
         print()
-
-
-if __name__ == '__main__':
-    print_matrix_integer(matrix=[[]])
