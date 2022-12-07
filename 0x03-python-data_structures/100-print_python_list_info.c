@@ -22,6 +22,6 @@ void print_python_list_info(PyObject *p)
 	{
 		node = PyList_GetItem(p, idx);
 		if (node)
-			printf("Element %d: %s\n", idx, node->ob_type->tp_name);
+			printf("Element %ld: %s\n", idx, node->ob_type->tp_name);
 	}
 }
