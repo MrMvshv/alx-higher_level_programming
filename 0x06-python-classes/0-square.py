@@ -7,4 +7,6 @@
 
 
 class Square:
+    """ this class is empty
+    """
     pass
