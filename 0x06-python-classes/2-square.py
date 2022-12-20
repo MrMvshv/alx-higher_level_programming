@@ -14,15 +14,14 @@ class Square:
     """
     def __init__(self, size=0):
         """ initialize square
-            to size
+            Args:
+                size: of square
+            Raises:
+                TypeError: not int
+                ValueError: < 0
         """
-        try:
-            size / 1
-            if size < 0:
-                raise ValueError
-            else:
-                self.__size = size
-        except ValueError:
-            print("size must be >= 0")
-        except TypeError:
-            print("size must be an integer")
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
