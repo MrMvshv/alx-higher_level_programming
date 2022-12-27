@@ -4,6 +4,7 @@
     returns result as int
 """
 
+
 def add_integer(a, b=98):
     """ adds a and b
     Returns: integer result
