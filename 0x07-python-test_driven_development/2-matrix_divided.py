@@ -18,13 +18,38 @@ def matrix_divided(matrix, div):
 	ZeroDivisionError if div is 0
 
     """
-    r,c = 0,0
+    r,c,p = 0,0,0
     new_matrix = []
 
     for x in matrix:
         r += 1
-    for m in matrix[0]:
-        c += 1
+        c = 0
+        for m in x:
+            print("{}:m".format(m))
+            if not isinstance(m, (int, float)):
+                r = 1
+                break
+            c += 1
+    for x in matrix:
+        if r == 1:
+            break
+        p = 0
+        for m in x:
+            p += 1
+        print("{}:r, {}:p, {}:c".format(r,p,c))
+        if p != c:
+            p = 0
+            break
+
+    print("{}:r, {}:p".format(r,p))
+    if r == 1:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    elif p == 0:
+        raise TypeError("Each row of the matrix must have the same size")
+    elif not isinstance(div, (int, float)):
+        raise TypeError("div must be a number")
+    elif div == 0:
+        raise ZeroDivisionError("division by zero")
 
     result = 0
 

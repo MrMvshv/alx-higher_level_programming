@@ -1,0 +1,50 @@
+===================
+3-say_my_name.py
+===================
+
+This module defines a function that prints my name is
+followed by first name and last name
+both must be strings
+
+Usage
+=====
+
+    ``say_my_name(first_name, last_name="")``
+
+:: normal use
+
+    >>> sayName = __import__('3-say_my_name').say_my_name
+    >>> sayName("Mr", "Mvshv")
+    My name is Mr Mvshv 
+
+:: last name errors
+
+    >>> sayName("Mr")
+    My name is Mr
+    >>> sayName("Mr", 1)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+    >>> sayName("Mr", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+    >>> sayName("Mr", ['l', 'o'])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+    >>> sayName("Mr", [])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+:: first name errors
+
+    >>> sayName(None, "Mr")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+    >>> sayName(1, "Mr")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+    >>> sayName(['l', 'o'])
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+    >>> sayName([])
+    Traceback (most recent call last):
+    TypeError: first_name must be a string

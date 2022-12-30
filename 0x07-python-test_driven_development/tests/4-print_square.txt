@@ -1,0 +1,35 @@
+===================
+4-print_square.py
+===================
+
+This module defines a function that prints a square
+using the character '#'
+the size is length of the square
+size must be valid
+
+Usage
+=====
+
+    ``print_square(size)``
+
+:: normal use
+
+    >>> sq = __import__('4-print_square').print_square
+    >>> sq(2)
+    ##
+    ##
+
+:: invalid size
+    >>> sq(0)
+    >>> sq(-1)
+    Traceback (most recent call last):
+    TypeError: size must be >= 0
+    >>> sq(1.0)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+    >>> sq(-2.0)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+    >>> sq('2')
+    Traceback (most recent call last):
+    TypeError: size must be an integer
