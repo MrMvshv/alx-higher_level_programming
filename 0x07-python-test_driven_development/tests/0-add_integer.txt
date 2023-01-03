@@ -11,21 +11,27 @@ Usage
 
 ::
     >>> add_integer = __import__('0-add_integer').add_integer
+
     >>> add_integer(2, 3)
     5
 
-::
     >>> add_integer(2, -3)
     -1
+
+    >>> add_integer(-2, -3)
+    -5
 
 floats
 ::
     >>> add_integer(2.0, -3.0)
     -1
+
     >>> add_integer(2.2, 3.0)
     5
+
     >>> add_integer(2, 3.0)
     5
+
     >>> add_integer(2.0, 3)
     5
 
@@ -33,8 +39,10 @@ one argument
 ::
     >>> add_integer(2.0)
     100
-    >>> add_integer(2)
-    100
+
+    >>> add_integer(-2)
+    96
+
     >>> add_integer(5)
     103
 
@@ -43,18 +51,21 @@ no argument
     >>> add_integer()
     Traceback (most recent call last):
     TypeError: add_integer() missing 1 required positional argument: 'a'
-
+ 
 none argument
 ::
     >>> add_integer(1, none)
     Traceback (most recent call last):
     NameError: name 'none' is not defined
+
     >>> add_integer(1, None)
     Traceback (most recent call last):
     TypeError: b must be an integer
+
     >>> add_integer(None, 3)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
     >>> add_integer(none, 3)
     Traceback (most recent call last):
     NameError: name 'none' is not defined
@@ -64,6 +75,7 @@ infinite argument
     >>> add_integer(float('inf'))
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
+
     >>> add_integer(1, float('inf'))
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
@@ -73,6 +85,7 @@ NaN argument
     >>> add_integer(1, float('nan'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
+
     >>> add_integer(float('nan'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
@@ -82,15 +95,19 @@ invalid arguments
     >>> add_integer('a', 1)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
     >>> add_integer(1, 'a')
     Traceback (most recent call last):
     TypeError: b must be an integer
+
     >>> add_integer([1], 2)
     Traceback (most recent call last):
     TypeError: a must be an integer
+
     >>> add_integer(1, [2])
     Traceback (most recent call last):
     TypeError: b must be an integer
+
     >>> add_integer('a' 'b')
     Traceback (most recent call last):
     TypeError: a must be an integer

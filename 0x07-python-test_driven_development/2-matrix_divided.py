@@ -21,11 +21,16 @@ def matrix_divided(matrix, div):
     r,c,p = 0,0,0
     new_matrix = []
 
+    if not isinstance(matrix, list) or matrix == []:
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     for x in matrix:
         r += 1
         c = 0
+        if not isinstance(x, list):
+            r = 1
+            break
         for m in x:
-            print("{}:m".format(m))
+            #print("{}:m".format(m))
             if not isinstance(m, (int, float)):
                 r = 1
                 break
@@ -36,12 +41,12 @@ def matrix_divided(matrix, div):
         p = 0
         for m in x:
             p += 1
-        print("{}:r, {}:p, {}:c".format(r,p,c))
+        #print("{}:r, {}:p, {}:c".format(r,p,c))
         if p != c:
             p = 0
             break
 
-    print("{}:r, {}:p".format(r,p))
+    #print("{}:r, {}:p".format(r,p))
     if r == 1:
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
     elif p == 0:

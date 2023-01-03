@@ -1,0 +1,46 @@
+===================
+5-text_indentation.py
+===================
+
+This module defines a function that takes text and
+prints it with 2 newlines after the characters
+'.' , ':' , '?'
+text must be a string
+
+Usage
+=====
+
+    ``text_indentation(text)``
+
+:: normal use
+
+    >>> idnt = __import__('5-text_indentation').text_indentation
+    >>> idnt("Mr.Mv")
+    Mr.
+    <BLANKLINE>
+    Mv
+    >>> idnt("Mr. Mv")
+    Mr.
+    <BLANKLINE>
+    Mv
+
+:: text not string
+
+    >>> idnt(1)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> idnt(['wer.d'])
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+    >>> idnt(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
+
+:: space variations
+
+    >>> idnt("Space : end ") #doctest: +NORMALIZE_WHITESPACE
+    Space :
+    <BLANKLINE>
+    end

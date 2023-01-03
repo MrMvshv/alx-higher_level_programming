@@ -21,15 +21,38 @@ Usage
 
 :: invalid size
     >>> sq(0)
+    >>> sq(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
     >>> sq(-1)
     Traceback (most recent call last):
     TypeError: size must be >= 0
+
     >>> sq(1.0)
     Traceback (most recent call last):
     TypeError: size must be an integer
+
     >>> sq(-2.0)
     Traceback (most recent call last):
     TypeError: size must be an integer
+
     >>> sq('2')
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> sq([1])
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> sq(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> sq(float('inf'))
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> sq(float('nan'))
     Traceback (most recent call last):
     TypeError: size must be an integer

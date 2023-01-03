@@ -14,22 +14,26 @@ Usage
 :: normal use
 
     >>> sayName = __import__('3-say_my_name').say_my_name
-    >>> sayName("Mr", "Mvshv")
+    >>> sayName("Mr", "Mvshv") #doctest: +NORMALIZE_WHITESPACE
     My name is Mr Mvshv 
 
 :: last name errors
 
-    >>> sayName("Mr")
+    >>> sayName("Mr") #doctest: +NORMALIZE_WHITESPACE
     My name is Mr
+
     >>> sayName("Mr", 1)
     Traceback (most recent call last):
     TypeError: last_name must be a string
+
     >>> sayName("Mr", None)
     Traceback (most recent call last):
     TypeError: last_name must be a string
+
     >>> sayName("Mr", ['l', 'o'])
     Traceback (most recent call last):
     TypeError: last_name must be a string
+
     >>> sayName("Mr", [])
     Traceback (most recent call last):
     TypeError: last_name must be a string
@@ -39,12 +43,15 @@ Usage
     >>> sayName(None, "Mr")
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
     >>> sayName(1, "Mr")
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
     >>> sayName(['l', 'o'])
     Traceback (most recent call last):
     TypeError: first_name must be a string
+
     >>> sayName([])
     Traceback (most recent call last):
     TypeError: first_name must be a string

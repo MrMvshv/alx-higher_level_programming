@@ -18,8 +18,86 @@ Usage
     >>> print(matrix_div(matrix, 3))
     [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
+    >>> matrix = [[2.0, 3.4], [4.2, 8.4]]
+    >>> print(matrix_div(matrix, 2))
+    [[1.0, 1.7], [2.1, 4.2]]
+
+    >>> matrix = [[4.2, 4.2], [4.2, 4.2]]
+    >>> print(matrix_div(matrix, 2.1))
+    [[2.0, 2.0], [2.0, 2.0]]
+
 :: list not of lists
 
     >>> matrix = [1, 2, 3]
     >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+    >>> matrix = []
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = 'string'
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = 6
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = [['a', 'b'], ['a', 'b']]
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix = ['abc', 'abc']
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+:: different sized rows
+
+    >>> matrix = [[1, 2], [1, 2, 3]]
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [[1, 2, 3], [1, 2]]
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [[], [1, 2, 3]]
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix = [[1, 2, 3], []]
+    >>> print(matrix_div(matrix, 3))
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+:: div errors
+
+    >>> matrix = [[8, 4, 0], [8, 4, 0]]
+    >>> print(matrix_div(matrix, 0))
+    Traceback (most recent call last):
+    ZeroDivisionError: division by zero
+
+    >>> matrix = [[8, 4, 2], [8, 4, 2]]
+    >>> print(matrix_div(matrix, '1'))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> matrix = [[8, 4, 0], [8, 4, 0]]
+    >>> print(matrix_div(matrix, [0]))
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+    >>> matrix = [[8, 4, 0], [8, 4, 0]]
+    >>> print(matrix_div(matrix, 'pow'))
+    Traceback (most recent call last):
+    TypeError: div must be a number
