@@ -1,0 +1,27 @@
+
+    def listSort(self):
+        """ listSort(list)
+            sorts a list
+            returns sorted list
+        """
+        nw = []
+        tmp = []
+        min = self[0]
+        z = 1
+
+        for x in range(len(self)):
+            tmp.append(self[x])
+
+        while (z == 1):
+            for x in range(len(tmp)):
+                if tmp[x] < min:
+                    min = tmp[x]
+            print("min: {}".format(min))    
+            nw.append(min)
+            tmp.remove(min)
+            if len(tmp):
+                min = tmp[0]
+
+            if len(self) == len(tmp):
+                z = 0
+        return nw
