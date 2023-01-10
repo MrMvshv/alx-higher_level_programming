@@ -11,7 +11,7 @@ args = sys.argv[1:]
 
 try:
     list1 = load_from_json_file("add_item.json")
-except Error:
+except:
     list1 = []
 
 list1.extend(args)
