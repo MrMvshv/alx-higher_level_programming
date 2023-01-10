@@ -1,0 +1,18 @@
+===================
+7-base_geometry.py
+===================
+
+This module defines a class
+the class contains two function
+one raises an error
+the other is an integer validator
+
+Usage
+=====
+
+    ``class.integer_validator(obj, type)``
+    
+:: normal use
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
