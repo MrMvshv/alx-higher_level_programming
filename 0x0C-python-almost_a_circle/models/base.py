@@ -3,6 +3,7 @@
     with private class attribute __nb_objects
     public instance attribute id
 """
+import json
 
 
 class Base:
@@ -22,3 +23,67 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """ returns the JSON string
+        representation of list_dictionaries
+        """
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ writes the JSON string representation
+            of list_objs to a file
+            list_objs is a list of instances who inherits of Base
+        """
+        nw_dicts = []
+        filename = cls.__name__ + ".json"
+
+        if list_objs is None or list_objs == []:
+            nStr = "[]"
+        else:
+            for x in list_objs:
+                y = x.to_dictionary()
+                nw_dicts.append(y)
+            nStr = list_objs[0].to_json_string(nw_dicts)
+
+        with open(filename, 'w', encoding="utf-8") as f:
+            f.write(nStr)
+
+    def from_json_string(json_string):
+        """Return the deserialized JSON string.
+           (str): A JSON str representation of a list of dicts.
+           Return: If json_string is None or empty - an empty list.
+           Otherwise - the Python list represented by json_string.
+        """
+        if json_string is None or json_string == "[]":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Return a class instantied from a dictionary of attributes.
+           dictionary (dict): Key/value pairs of attributes to initialize.
+        """
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+            new.update(**dictionary)
+            return new
+
+    @classmethod
+    def load_from_file(cls):
+        """Return a list of classes instantiated from a file of JSON strings.
+            Return: If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
+        """
+        filename = str(cls.__name__) + ".json"
+
+        with open(filename, "r") as jsonfile:
+            list_dicts = Base.from_json_string(jsonfile.read())
+            return [cls.create(**d) for d in list_dicts]
