@@ -4,6 +4,7 @@
 """
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """ square is a rectangle
         whose width = height
@@ -16,8 +17,7 @@ class Square(Rectangle):
         """ overrides by printing square
             instead
         """
-        return "[Square] ({}) {}/{} - {}".format(self.id,\
-        self.x, self.y, self.width)
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):

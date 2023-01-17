@@ -8,6 +8,7 @@
 """
 from models.base import Base
 
+
 class Rectangle(Base):
     """ rectangle with width and height properties
         Attributes:
@@ -102,9 +103,9 @@ class Rectangle(Base):
         """
         for m in range(self.__y):
             print()
-    
+
         for y in range(self.__height):
-            for j in range (self.__x):
+            for j in range(self.__x):
                 print(" ", end='')
             for x in range(self.__width):
                 print('#', end='')
@@ -113,8 +114,8 @@ class Rectangle(Base):
     def __str__(self):
         """ returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,\
-        self.x, self.y, self.width, self.height)
+        return "[Rectangle] ({}) {}/{} - {}/{}"\
+               .format(self.id, self.x, self.y, self.width, self.height)
 
     def update(self, *args, **kwargs):
         """ assigns arguments to each attribute
@@ -144,6 +145,8 @@ class Rectangle(Base):
         """returns dictionary representation
            of a rectangle
         """
-        rect_dict = {'x': self.x, 'y': self.y,\
-        'id': self.id, 'height': self.height, 'width': self.width}
-        return rect_dict
+        return {'x': self.x,
+                'y': self.y,
+                'id': self.id,
+                'height': self.height,
+                'width': self.width}
