@@ -95,8 +95,6 @@ class Base:
     def __del__(self):
         pass
 
-
-
     @staticmethod
     def draw(list_rectangles, list_squares):
         '''
