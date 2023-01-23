@@ -90,3 +90,6 @@ class TestBase_instantiation(unittest.TestCase):
     def test_NaN_id(self):
         self.assertNotEqual(float('nan'), Base(float('nan')).id)
 
+
+if __name__ == "__main__":
+    unittest.main()
