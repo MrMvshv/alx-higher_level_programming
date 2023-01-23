@@ -29,7 +29,7 @@ class Base:
     def to_json_string(list_dictionaries):
         """ returns the JSON string
         representation of list_dictionaries
-B        """
+        """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
@@ -95,50 +95,51 @@ B        """
     def __del__(self):
         pass
 
+
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         '''
             Opens a window and draws all the squares and rectangles
         '''
-        import turtle
+        import turtle as t
 
-        turtle.penup()
-        turtle.pensize(10)
-        turtle.bgcolor("black")
-        turtle.color("teal")
-        turtle.hideturtle()
-        turtle.goto(-300, 300)
-        turtle.speed(0)
+        t.title("Rectangles and Squares")
+        t.penup()
+        t.pensize(5)
+        t.bgcolor("grey")
+        t.color("green")
+        t.hideturtle()
+        t.goto(-275, 275)
+        t.speed(2)
 
         for instance in list_rectangles:
-            turtle.pendown()
+            t.pendown()
+            t.begin_fill()
             for i in range(2):
-                turtle.forward(instance.width)
-                turtle.right(90)
-                turtle.forward(instance.height)
-                turtle.right(90)
-            turtle.penup()
-            if instance.width < 100:
-                move_by = 200
-            else:
-                move_by = instance.width + 30
-            x_cordinate = round(turtle.xcor(), 5)
-            turtle.goto(x_cordinate + move_by, 300)
+                t.forward(instance.width)
+                t.right(90)
+                t.forward(instance.height)
+                t.right(90)
+            t.end_fill()
+            t.penup()
+            move_by = instance.width + 25
+            x_cordinate = round(t.xcor(), 5)
+            t.goto(x_cordinate + move_by, 275)
 
-        turtle.goto(-300, 100)
+        t.goto(-275, 0)
         for instance in list_squares:
-            turtle.pendown()
+            t.pendown()
+            t.begin_fill()
             for i in range(2):
-                turtle.forward(instance.width)
-                turtle.right(90)
-                turtle.forward(instance.height)
-                turtle.right(90)
-            turtle.penup()
-            if instance.width < 100:
-                move_by = 10A0
-            else:
-                move_by = instance.width + 30
-            x_cordinate = round(turtle.xcor(), 5)
-            turtle.goto(x_cordinate + move_by, 100)
+                t.forward(instance.width)
+                t.right(90)
+                t.forward(instance.height)
+                t.right(90)
+            t.end_fill()
+            t.penup()
+            move_by = instance.width + 25
+            x_cordinate = round(t.xcor(), 5)
+            t.goto(x_cordinate + move_by, 0)
 
-        turtle.exitonclick()
+        t.exitonclick()
