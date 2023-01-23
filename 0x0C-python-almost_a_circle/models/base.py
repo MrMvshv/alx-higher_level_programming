@@ -7,6 +7,7 @@ import json
 import turtle
 import csv
 
+
 class Base:
     """ public instance attribute id
         private class attribute __nb_objects
@@ -135,6 +136,7 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         '''
