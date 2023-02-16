@@ -1,5 +1,4 @@
--- create table on server
--- should not fail
-CREATE TABLE IF NOT EXISTS force_name (
-    id INT NOT NULL DEFAULT 1,
-    name VARCHAR(256) NOT NULL);
+-- lists all cities of california
+-- should not use JOIN
+SELECT `cities.id`, `cities.name`, `states.name` FROM `cities`, `states`
+ORDER BY `cities.id`;
