@@ -1,3 +1,5 @@
 -- creates tables in db
 -- db provided as argument
-CREATE TABLE IF NOT EXISTS first_table (id INT, name VARCHAR(256));
+CREATE TABLE IF NOT EXISTS id_not_null (
+    id INT NOT NULL,
+    name VARCHAR(256));
