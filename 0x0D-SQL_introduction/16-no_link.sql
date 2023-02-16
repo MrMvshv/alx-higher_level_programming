@@ -1,6 +1,6 @@
 -- lists no. of records with same score
 -- display score, number of records with label sorted
-SELECT score, COUNT(*) as number
+SELECT score, name
 FROM second_table
-GROUP BY score
-ORDER BY number;
+WHERE name IS NOT NULL
+ORDER BY score desc;
