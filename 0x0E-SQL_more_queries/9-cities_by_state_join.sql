@@ -1,4 +1,7 @@
 -- lists all cities of california
 -- should not use JOIN
-SELECT `cities.id`, `cities.name`, `states.name` FROM `cities`, `states`
-ORDER BY `cities.id`;
+SELECT `c.id`, `c.name`, `s.name`
+    FROM `cities` AS c
+        INNER JOIN `states` AS s
+        ON c.`state_id` = s.`id`
+    ORDER BY c.`id`;
