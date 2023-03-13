@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const process = require('process');
 const argvee = process.argv;
-size = argvee.length;
+const size = argvee.length;
 if (size <= 3) {
   console.log('0');
 } else {
@@ -11,7 +11,7 @@ if (size <= 3) {
     if (argvee[i] > toppa) {
       secs = toppa;
       toppa = argvee[i];
-    } else if (argvee[i] > secs && argvee[i] != toppa) {
+    } else if (argvee[i] > secs && argvee[i] !== toppa) {
       secs = argvee[i];
     }
   }
