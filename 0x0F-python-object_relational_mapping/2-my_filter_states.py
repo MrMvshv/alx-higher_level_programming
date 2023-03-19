@@ -13,7 +13,8 @@ if __name__ == "__main__":
                          db=sys.argv[3])
     cur = db.cursor()
 
-    cmd = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format(sys.argv[4])
+    cmd = "SELECT * FROM states WHERE name = '{}'\
+            ORDER BY id ASC;".format(sys.argv[4])
     cur.execute(cmd)
 
     query_rows = cur.fetchall()
