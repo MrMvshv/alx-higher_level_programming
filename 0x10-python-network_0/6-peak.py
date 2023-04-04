@@ -16,18 +16,12 @@ def find_peak(list_of_integers):
     if size == 1:
         return lint[0]
 
-    if lint[0] > lint[1]:
-        peak = lint[0]
-
+    start = 0
     end = size - 1
-    for i in range(size):
-        if lint[i] >= lint[i - 1] and lint[i] >= lint[i + 1]:
-            peak = lint[i]
-            return peak
-        if end != (size - 1):
-            if lint[end] >= lint[end + 1] and lint[end] >= lint[end - 1]:
-                peak = lint[end]
-                return peak
-    if end == (size - 1) and lint[end] > lint[end - 1]:
-        peak = lint[end]
-    return peak
+    while (start < end):
+        mid = (start + end) // 2
+        if (lint[mid] <= lint[mid + 1]):
+            start = mid + 1
+        else:
+            end = mid
+    return lint[start]
