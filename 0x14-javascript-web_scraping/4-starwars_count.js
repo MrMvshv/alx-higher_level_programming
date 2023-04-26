@@ -13,7 +13,6 @@ let number = 0;
 request.get(apiUrl, (error, response, body) => {
   if (error) {
     console.error('Error:', error);
-    return;
   } else {
     const result = JSON.parse(body);
     const list = result.results;
@@ -24,6 +23,5 @@ request.get(apiUrl, (error, response, body) => {
       }
     });
     console.log(number);
-    return;
   }
 });
