@@ -10,18 +10,29 @@ const apiUrl = process.argv[2];
 const character = 'https://swapi-api.alx-tools.com/api/people/18/';
 let number = 0;
 
-request.get(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error('Error:', error);
-  } else {
-    const result = JSON.parse(body);
-    const list = result.results;
+function checkMovies (movies) {
+  movies.forEach((movie) => {
+    if (movie.characters.includes(character)) {
+      number += 1;
+    }
+  });
+}
 
-    list.forEach((movie) => {
-      if (movie.characters.includes(character)) {
-        number += 1;
+function getMovies (url) {
+  request.get(url, (error, response, body) => {
+    if (error) {
+      console.error('Error:', error);
+    } else {
+      const result = JSON.parse(body);
+      checkMovies(result.results);
+
+      if (result.next) {
+        getMovies(result.next);
+      } else {
+        console.log(number);
       }
-    });
-    console.log(number);
-  }
-});
+    }
+  });
+}
+
+getMovies(apiUrl);
