@@ -3,5 +3,8 @@
  * element to red (#FF0000) using jquery
  */
 const head = $('header');
+const red = $('div#red_header');
 
-head.css('color', '#FF0000');
+red.on( "click", function() {
+  head.css('color', '#FF0000');
+});
