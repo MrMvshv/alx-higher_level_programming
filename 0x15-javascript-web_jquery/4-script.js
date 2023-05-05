@@ -2,9 +2,13 @@
  * updates the text color of the <header>
  * element to red (#FF0000) using jquery
  */
-const head = $('header');
-const red = $('div#toggle_header');
+$(document).ready(function(){
 
-red.on( "click", function() {
-  head.toggleClass("red green");
+    $('#toggle_header').click(function(){
+
+        $('header').toggleClass('red green');
+
+    });
+
 });
+
