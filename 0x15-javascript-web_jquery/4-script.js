@@ -6,5 +6,5 @@ const head = $('header');
 const red = $('div#toggle_header');
 
 red.on( "click", function() {
-  head.toggleClass("red", "green");
+  head.toggleClass("red green");
 });
