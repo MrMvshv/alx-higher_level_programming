@@ -7,7 +7,7 @@
 const url = 'https://fourtonfish.com/hellosalut/?lang=fr';
 
 $(document).ready(() => {
-  fetch(`${url}`)
+  fetch(`${url}`, { mode: 'no-cors' })
     .then(response => response.json())
     .then(data => {
       $('div#hello').text(data.hello);
