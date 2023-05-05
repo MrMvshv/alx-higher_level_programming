@@ -10,7 +10,7 @@ const url = proxyUrl + apiUrl;
 $(() => {
   $('#btn_translate').click(() => {
     const languageCode = $('#language_code').val();
-    $.getJSON(${url}?lang=${languageCode}, (data) => {
+    $.getJSON(`${url}?lang=${languageCode}`, (data) => {
       $('DIV#hello').html(data.hello);
     });
   });
