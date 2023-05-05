@@ -6,11 +6,8 @@
 
 const url = 'https://fourtonfish.com/hellosalut/?lang=fr';
 
-$(document).ready(() => {
-  fetch(`${url}`, { mode: 'no-cors' })
-    .then(response => response.text())
-    .then(data => {
-      $('div#hello').text(data);
-    })
-    .catch(error => console.error(error));
+$(() => {
+  $.get(`${url}`, (data, status) => {
+    $('DIV#hello').html(data.hello);
+  });
 });
