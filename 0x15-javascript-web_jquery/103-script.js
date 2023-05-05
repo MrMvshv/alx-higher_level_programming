@@ -6,7 +6,9 @@ $(document).ready(function () {
   function translateHello() {
     const langCode = $('#language_code').val();
 
-    const url = `https://www.fourtonfish.com/hellosalut/?lang=${langCode}`;
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // proxy server URL
+    const apiUrl = 'https://www.fourtonfish.com/hellosalut/hello/';
+    const url = proxyUrl + apiUrl + '?lang=${langCode}';
 
     $.get(url, function (data) {
       $('#hello').text(data.hello);

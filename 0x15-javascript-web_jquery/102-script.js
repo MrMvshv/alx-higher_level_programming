@@ -3,8 +3,9 @@
  * depending on the language
  */
 'use strict';
-
-const url = 'https://www.fourtonfish.com/hellosalut/hello/';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // proxy server URL
+const apiUrl = 'https://www.fourtonfish.com/hellosalut/hello/';
+const url = proxyUrl + apiUrl;
 
 $(() => {
   $('#btn_translate').click(() => {
