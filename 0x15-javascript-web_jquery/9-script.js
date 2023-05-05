@@ -3,8 +3,9 @@
  *  from the url and renders in html
  */
 'use strict';
-
-const url = 'https://fourtonfish.com/hellosalut/?lang=fr';
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // proxy server URL
+const apiUrl = 'https://fourtonfish.com/hellosalut/?lang=fr'; // API URL
+const url = proxyUrl + apiUrl; // combine the URLs
 
 $(() => {
   $.get(`${url}`, (data, status) => {
