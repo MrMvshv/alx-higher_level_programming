@@ -4,7 +4,7 @@
  */
 'use strict';
 const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // proxy server URL
-const apiUrl = 'https://www.fourtonfish.com/hellosalut/hello/';
+const apiUrl = 'https://hellosalut.stefanbohacek.dev/';
 const url = proxyUrl + apiUrl;
 
 $(() => {
